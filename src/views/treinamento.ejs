@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Treinamento Robô ☢🤖</title>
+  <link rel="stylesheet" type="text/css" href="styles/treinamento.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script src="/socket.io/socket.io.js"></script>
+
+</head>
+<body>
+    <nav class="main-menu">
+
+        <div>
+            <a class="logo" href="http://startific.com">
+            </a> 
+          </div> 
+        <div class="settings"></div>
+        <div class="scrollbar" id="style-1">
+              
+        <ul>
+
+        <div>
+            <a class="logo" href="http://startific.com">
+            </a>
+        </div>
+        <div class="settings"></div>
+        <div class="scrollbar" id="style-1">
+
+            <ul>
+
+                <li>
+                    <a href="http://localhost:8000/">
+                        <i class="fa fa-home fa-lg"></i>
+                        <span class="nav-text">Leitura QRCODE</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="http://localhost:8000/treinamento">
+                        <i class="fa fa-user fa-lg"></i>
+                        <span class="nav-text">Treinamento do Robô</span>
+                    </a>
+                </li>
+
+
+            </ul>
+
+
+    </nav>
+<div class="table-wrapper">
+    <br>
+    <div >
+        <h1 class="display-4">Treinamento Robô 🤖</h1>
+        <br>
+        <form action="/treinamento" method="POST" class="form">
+             <input  name="utterances" class="form-control" placeholder="Palavra Chave/Frase de exemplo"/>
+            <br>
+            <textarea name="intent" class="form-control" placeholder="Intenção - Sentimento da frase recebida"></textarea>
+            <br>
+            <textarea name="answers" class="form-control" placeholder="Resposta"></textarea>
+            <br>
+            <div class="wrapper">
+                <button id="send" class="btn btn-success">Send</button>
+            </div>
+      
+        </form>
+    </br>
+    </div>
+</div>
+    <!-- <table border="2">
+
+        <tr>
+            <td>Mensagem recebida</td>
+            <td>Sentimento da mensagem</td>
+            <td>Resposta</td>
+        </tr>
+        <tr>
+        <td> 
+            <% message && message.forEach(type =>{ %>
+                <h1><%= type.type %>  </h1> 
+            <% }) %>
+        </td>
+
+            <td>  
+            <% message && message.forEach(question =>{ %>
+            <h1><%= question.question %>  </h1> 
+            <% }) %>
+        </td>
+            <td> 
+         <% message && message.forEach(reply =>{ %>
+            <h1><%= reply.reply %>  </h1> 
+            <% }) %>
+        </td>
+        </tr>
+
+    </table>
+    -->
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+            <tr>
+                <th>Mensagem recebida</th>
+                <th>Sentimento da mensagem</th>
+                <th>Resposta</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td> <% message && message.forEach(utterances=>{ %>
+                        <h1><%= utterances.utterances %>  </h1> 
+                    <% }) %>
+                </td>
+              
+                <td>
+                    <% message && message.forEach(intent =>{ %>
+                        <h1><%= intent.intent %>  </h1> 
+                        <% }) %>
+                </td>
+              
+                
+                <td>
+                    <% message && message.forEach(answers =>{ %>
+                        <h1><%= answers.answers %>  </h1> 
+                        <% }) %>
+                 
+                </td>
+            <tbody>
+        </table>
+</div>
+
+</body>
+</html>

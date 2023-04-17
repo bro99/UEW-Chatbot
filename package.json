@@ -1,0 +1,30 @@
+{
+  "name": "samuel",
+  "version": "1.0.0",
+  "description": "Projeto desenvolvido por samuca",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/serve.js",
+    "init-db": "node src/db/init.js"
+  },
+  "keywords": [],
+  "author": "SamuelGo",
+  "license": "ISC",
+  "dependencies": {
+    "@nlpjs/basic": "^4.23.5",
+    "axios": "^0.20.0",
+    "delay": "^5.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-fileupload": "^1.2.0",
+    "express-validator": "^6.9.2",
+    "http": "0.0.1-security",
+    "mime-types": "^2.1.32",
+    "mongoose": "^6.8.0",
+    "node-nlp": "^4.24.0",
+    "nodemon": "^2.0.22",
+    "qrcode": "^1.4.4",
+    "socket.io": "2.3.0",
+    "whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#fix-buttons-list"
+  }
+}
